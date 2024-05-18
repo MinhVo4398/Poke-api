@@ -1,7 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require("@playwright/test");
 
-
 module.exports = defineConfig({
   testDir: "./tests",
   /* Run tests in files in parallel */
@@ -16,8 +15,8 @@ module.exports = defineConfig({
   reporter: "html",
 
   use: {
-   
     trace: "on-first-retry",
+    baseURL: "https://pokeapi.co/api/v2/",
   },
 
   /* Configure projects for major browsers */
@@ -27,6 +26,4 @@ module.exports = defineConfig({
       use: { ...devices["Desktop Chrome"] },
     },
   ],
-
- 
 });
